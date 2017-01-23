@@ -1,8 +1,6 @@
 package logic.data;
 
-import java.io.PrintStream;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.HashMap;
 
 import javax.xml.bind.annotation.XmlTransient;
@@ -39,13 +37,14 @@ Cloneable {
 
     public DatabaseInfo(String applicationName) throws Exception {
         this.jndi = applicationName;
-        this.defaultSchema = applicationName;
+        this.setDefaultSchema(applicationName);
         this.databaseType = DatabaseType.UNKNOWN;
-        this.applicationName = applicationName;
+        this.setApplicationName(applicationName);
         this.prepareProperties();
     }
 
-    private void prepareProperties() throws Exception {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	private void prepareProperties() throws Exception {
         boolean isEclipseLink = this.jpaProvider == null || this.jpaProvider.equals("") || this.jpaProvider == JpaProviderType.EclipseLink;
         this.properties = new HashMap();
         if (this.password == null || this.password.isEmpty()) {
@@ -156,4 +155,60 @@ Cloneable {
         }
         return this.properties;
     }
+
+	public String getSystemName() {
+		return systemName;
+	}
+
+	public void setSystemName(String systemName) {
+		this.systemName = systemName;
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	public String getApplicationName() {
+		return applicationName;
+	}
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+	}
+
+	public String getApplicationIpAddress() {
+		return applicationIpAddress;
+	}
+
+	public void setApplicationIpAddress(String applicationIpAddress) {
+		this.applicationIpAddress = applicationIpAddress;
+	}
+
+	public String getSystemInfoKey() {
+		return systemInfoKey;
+	}
+
+	public void setSystemInfoKey(String systemInfoKey) {
+		this.systemInfoKey = systemInfoKey;
+	}
+
+	public String getDefaultSchema() {
+		return defaultSchema;
+	}
+
+	public void setDefaultSchema(String defaultSchema) {
+		this.defaultSchema = defaultSchema;
+	}
+
+	public String getOrganization() {
+		return organization;
+	}
+
+	public void setOrganization(String organization) {
+		this.organization = organization;
+	}
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pretty-config xmlns="http://ocpsoft.org/prettyfaces/3.3.3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.org/prettyfaces/3.3.3 http://ocpsoft.org/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3.xsd">
+	
+	<url-mapping>
+		<pattern value="/" />
+		<view-id value="/login.jsf" />
+	</url-mapping>
+	<url-mapping id="customer_home">
+		<pattern value="/customerHome" />
+		<view-id value="/customerHome.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="home">
+		<pattern value="/index" />
+		<view-id value="/index.jsf" />
+	</url-mapping>
+	<url-mapping id="anket1">
+		<pattern value="/anket1" />
+		<view-id value="/anket1.jsf" />
+	</url-mapping>
+	<url-mapping id="anket2">
+		<pattern value="/anket2" />
+		<view-id value="/anket2.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="anket3">
+		<pattern value="/anket3" />
+		<view-id value="/anket3.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="anket4">
+		<pattern value="/anket4" />
+		<view-id value="/anket4.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="anket5">
+		<pattern value="/anket5" />
+		<view-id value="/anket5.jsf" />
+	</url-mapping>
+	<url-mapping id="syncloadindex">
+		<pattern value="/syncloadindex" />
+		<view-id value="/syncloadindex.jsf" />
+	</url-mapping>
+</pretty-config>

@@ -1,13 +1,13 @@
 package logic.data;
 
 import logic.data.CustomHashMapEntry;
-import java.io.PrintStream;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
 import javax.persistence.Query;
 
 public class CustomHashMap
@@ -19,7 +19,8 @@ implements Serializable {
     public CustomHashMap() {
     }
 
-    public CustomHashMap(HashMap<String, ?> hashMap) {
+    @SuppressWarnings("rawtypes")
+	public CustomHashMap(HashMap<String, ?> hashMap) {
         for (Map.Entry entry : hashMap.entrySet()) {
             this.hashMapEntries.add(new CustomHashMapEntry(entry.getKey().toString(), entry.getValue()));
         }

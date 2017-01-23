@@ -5,7 +5,6 @@ import logic.data.CustomHashMapEntry;
 import logic.data.CustomHashMap;
 import logic.data.Tools;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -30,7 +29,7 @@ import javax.persistence.criteria.Root;
 
 public class SuperBusinessLogic {
 
-	private String applicationName = "Hospital";
+	private String applicationName = "TNONEW";
 	private EntityManager entityManager;
 	
 	public EntityManager entityManager() throws Exception{
@@ -42,13 +41,8 @@ public class SuperBusinessLogic {
     	return entityManager;
 	}
 	
-	public void setEntityManager(EntityManager eManager){
-		if(eManager == null && entityManager != null) {
-			entityManager.flush();
-			entityManager.close();
-			entityManager = null;
-		}
-		entityManager = eManager;
+	public void clearCash() {
+		entityManager = null;
 	}
 	
 	public SuperBusinessLogic() {
@@ -186,7 +180,8 @@ public class SuperBusinessLogic {
     	return this.getByAnyField(type, field, fieldValue, null);
     }
 
-    public <T> List<T> getByAnyField(Class<T> type, String field, Object fieldValue, CustomHashMap sortOrders) throws Exception {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public <T> List<T> getByAnyField(Class<T> type, String field, Object fieldValue, CustomHashMap sortOrders) throws Exception {
     	EntityManager em = entityManager();
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaQuery criteriaQuery = criteriaBuilder.createQuery(type);
@@ -197,7 +192,8 @@ public class SuperBusinessLogic {
         return query.getResultList();
     }
     
-    private <T> void addOrderCriteria(CriteriaBuilder criteriaBuilder, CriteriaQuery<T> criteriaQuery, Root<T> root, CustomHashMap sortOrders) {
+    @SuppressWarnings("rawtypes")
+	private <T> void addOrderCriteria(CriteriaBuilder criteriaBuilder, CriteriaQuery<T> criteriaQuery, Root<T> root, CustomHashMap sortOrders) {
         ArrayList<Order> orderList = new ArrayList<Order>();
         if (sortOrders != null && sortOrders.size() > 0) {
             for (CustomHashMapEntry entry : sortOrders.getHashMapEntries()) {
@@ -212,7 +208,8 @@ public class SuperBusinessLogic {
         }
     }
     
-    private <T> Predicate getPredicate(CriteriaBuilder criteriaBuilder, Root<T> root, String field, Object value) {
+    @SuppressWarnings("rawtypes")
+	private <T> Predicate getPredicate(CriteriaBuilder criteriaBuilder, Root<T> root, String field, Object value) {
         Predicate predicate = null;
         if (value instanceof List) {
             List collection = (List)value;
@@ -240,7 +237,8 @@ public class SuperBusinessLogic {
         return query.getResultList();
     }
     
-    @TransactionAttribute(value=TransactionAttributeType.NOT_SUPPORTED)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	@TransactionAttribute(value=TransactionAttributeType.NOT_SUPPORTED)
     public <T> List<T> getByQuery(Class<T> type, String jpql, CustomHashMap parameters, CustomHashMap dateParameters, int firstResult, int maxResult) throws Exception {
         EntityManager em = entityManager();
         TypedQuery query = em.createQuery(jpql, type);
@@ -283,7 +281,8 @@ public class SuperBusinessLogic {
         return String.valueOf(Tools.invokeMethod(type, (String)"getPkIdFieldName"));
     }
 
-    @TransactionAttribute(value=TransactionAttributeType.NOT_SUPPORTED)
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@TransactionAttribute(value=TransactionAttributeType.NOT_SUPPORTED)
     public <T> T getById(Class<T> type, Object id) throws Exception {
         try {
             String query;
@@ -303,7 +302,8 @@ public class SuperBusinessLogic {
         return String.valueOf(Tools.invokeMethod(type, (String)"getIdFieldName"));
     }
     
-    private <T> String getJpql(Class<T> type, CustomHashMap filter, String searchValue) throws Exception {
+    @SuppressWarnings("unused")
+	private <T> String getJpql(Class<T> type, CustomHashMap filter, String searchValue) throws Exception {
         return this.getJpql(type, filter, null, searchValue);
     }
     
@@ -375,7 +375,8 @@ public class SuperBusinessLogic {
     	return (List<T>)typedQuery.getResultList();
     }
     
-    public <T> List<T> getByNativeQueryAll(Object type, String jpql, CustomHashMap parameters, int firstResult, int maxResult) throws Exception {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public <T> List<T> getByNativeQueryAll(Object type, String jpql, CustomHashMap parameters, int firstResult, int maxResult) throws Exception {
         Query query = null;
         if (type == null) {
             query = entityManager().createNativeQuery(jpql);

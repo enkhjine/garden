@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0"
-	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="Garden" transaction-type="RESOURCE_LOCAL">
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	
+	<persistence-unit name="TNONEW" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>garden.entity.Employee</class>
-		<class>garden.entity.Menu</class>
-		<class>garden.entity.Organization</class>
-		<class>garden.entity.UserRoleMap</class>
-		<class>garden.entity.Users</class>
-		<class>garden.entity.RoleMenuMap</class>
-		<class>garden.entity.Role</class>
-		<class>garden.entity.UserConfig</class>
+		<class>enda.entity.Users</class>
+		<class>enda.entity.z_aimag</class>
+		<class>enda.entity.z_ctype</class>
+		<class>enda.entity.z_focus</class>
+		<class>enda.entity.z_horoo</class>
+		<class>enda.entity.z_middistrict</class>
+		<class>enda.entity.z_street</class>
+		<class>enda.entity.z_sym</class>
+		<class>enda.entity.Anket</class>
+		<class>enda.entity.UserPFile</class>
 	</persistence-unit>
 </persistence>

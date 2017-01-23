@@ -3,15 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
-	<!-- Davaadorj -->
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>login</from-outcome>
-			<to-view-id>/login.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
@@ -20,51 +11,12 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>company_list</from-outcome>
-			<to-view-id>/company/list.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>company_register</from-outcome>
-			<to-view-id>/company/register.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>role_list</from-outcome>
-			<to-view-id>/role/list.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>role_register</from-outcome>
-			<to-view-id>/role/register.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>menu_list</from-outcome>
-			<to-view-id>/menu/list.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>menu_register</from-outcome>
-			<to-view-id>/menu/register.xhtml</to-view-id>
+			<from-outcome>customer_home</from-outcome>
+			<to-view-id>/customerHome.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
@@ -72,40 +24,56 @@
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>user_list</from-outcome>
-			<to-view-id>/user/list.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<from-view-id>*</from-view-id>
-		<navigation-case>
-			<from-outcome>user_register</from-outcome>
-			<to-view-id>/user/register.xhtml</to-view-id>
+			<from-outcome>anket1</from-outcome>
+			<to-view-id>/anket1.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
 	
-	<!-- Otgoo -->
-
-
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>anket2</from-outcome>
+			<to-view-id>/anket2.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 	
-
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>employee_list</from-outcome>
-			<to-view-id>/employee/list.xhtml</to-view-id>
+			<from-outcome>anket3</from-outcome>
+			<to-view-id>/anket3.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
-			<from-outcome>employee_register</from-outcome>
-			<to-view-id>/employee/register.xhtml</to-view-id>
+			<from-outcome>anket4</from-outcome>
+			<to-view-id>/anket4.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>anket5</from-outcome>
+			<to-view-id>/anket5.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>syncloadindex</from-outcome>
+			<to-view-id>/syncloadindex.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
 
 </faces-config>

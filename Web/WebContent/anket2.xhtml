@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="template/template.xhtml">
+	<ui:define name="content">
+		<div class="row">
+
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li><a href="index.html">Нүүр хуудас</a></li>
+					<li class="active">Иргэн</li>
+					<li class="active">Шинэ холболт</li>
+					<li class="active">Үйлдвэр, Үйлчилгээ</li>
+					<li class="active">ӨМ-2</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 center text-center">
+				<h4>Шинэ холболтын хүсэлт гаргагчийн өргөдөл</h4>
+				<p>
+					<b>ИРГЭНИЙ</b> хүсэлтээр ҮЙЛДВЭРЛЭЛ, ҮЙЛЧИЛГЭЭ-ний хэрэглээг холбох
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="thumbnail no-border-radius alert-info">
+					<p class="text-center">Санамж</p>
+					<i>Тухайн шинэ холболт хүсч буй газрын зөвшөөрөл, үл хөдлөх
+						хөрөнгийн гэрчилгээ нь иргэний нэр дээр байгаа тохиолдолд энэ
+						маягтыг бөглөнө. Хэрэв аж ахуйн нэгжийн нэр дээр байгаа бол ӨМ-3
+						маягтыг бөглөнө. </i>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="thumbnail no-border-radius">
+					<h5 class="text-center" style="">
+						<b>1. Хүсэлт гаргагчийн мэдээлэл</b>
+					</h5>
+					<div class="col-sm-12">
+						<p>
+							<b>1.1 Хүсэлт гаргагч иргэний</b>
+						</p>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="input4" class="col-sm-1 control-label">Овог</label>
+								<div class="col-sm-11">
+									<p:inputText required="true" styleClass="form-control"
+										value="#{userController.anket2.userovog}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="input5" class="col-sm-1 control-label">Нэр</label>
+								<div class="col-sm-11">
+									<p:inputText required="true" styleClass="form-control"
+										value="#{userController.anket2.username}" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input6" class="col-sm-2 control-label padding-top-0">1.2
+								Иргэний регистрийн дугаар:</label>
+							<div class="col-sm-10">
+								<p:inputText required="true"  styleClass="form-control"
+									value="#{userController.anket2.userreg}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12">
+						<p>
+							<b>1.3. Хүсэлт гаргагчийн иргэний үнэмлэх дээрх хаяг: </b>
+						</p>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input7"
+											class="col-sm-2 control-label  padding-top-0">Аймаг /
+											хот</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu value="#{userController.anket2.aimagid}"
+												filter="true">
+												<p:ajax event="valueChange" update="@(.daa)" />
+												<f:selectItems value="#{userController.listAimag}"
+													var="aimag" itemValue="#{aimag.aimagID}"
+													itemLabel="#{aimag.aimagName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input8"
+											class="col-sm-2 control-label  padding-top-0">Сум /
+											дүүрэг:</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu styleClass="daa"
+												value="#{userController.anket2.symid}" filter="true">
+												<p:ajax event="valueChange" update="@(.daa)" />
+												<f:selectItems value="#{userController.listSym2}" var="sum"
+													itemValue="#{sum.symID}" itemLabel="#{sum.symName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input9"
+											class="col-sm-2 control-label  padding-top-0">Баг /
+											хороо:</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu styleClass="daa"
+												value="#{userController.anket2.horooid}" filter="true">
+												<p:ajax event="valueChange" update="@(.daa)" />
+												<f:selectItems value="#{userController.listHoroo2}"
+													var="horoo" itemValue="#{horoo.horooID}"
+													itemLabel="#{horoo.horooName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input10"
+											class="col-sm-2 control-label  padding-top-0">Хороолол:</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu styleClass="daa"
+												value="#{userController.anket2.middistid}" filter="true">
+												<f:selectItems value="#{userController.listMiddistrict2}"
+													var="mid" itemValue="#{mid.middistID}"
+													itemLabel="#{mid.middistName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input11"
+											class="col-sm-3 control-label  padding-top-0">Гудамжны
+											нэр № / Байр №:</label>
+										<div class="col-sm-9">
+											<p:inputText required="true" styleClass="form-control"
+												value="#{userController.anket2.streetname}" />
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input12"
+											class="col-sm-2 control-label  padding-top-0">Хаалганы
+											№:</label>
+										<div class="col-sm-10">
+											<p:inputText required="true" styleClass="form-control"
+												value="#{userController.anket2.toot}" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input13"
+											class="col-sm-3 control-label  padding-top-0">Утас 1:</label>
+										<div class="col-sm-9">
+											<p:inputText required="true" styleClass="form-control"
+												value="#{userController.anket2.phone}" />
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input14"
+											class="col-sm-2 control-label  padding-top-0">Утас 2:
+										</label>
+										<div class="col-sm-10">
+											<p:inputText required="true" styleClass="form-control"
+												value="#{userController.anket2.phone1}" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="input15"
+									class="col-sm-1 control-label  padding-top-0">И-мэйл
+									хаяг: </label>
+								<div class="col-sm-11">
+									<p:inputText required="true" id="email" label="email"
+											styleClass="form-control" size="40"
+											requiredMessage="И-Мэил оруулна уу"
+											validatorMessage="И-Мэйл биш байна"
+											value="#{userController.anket2.email}">
+
+											<f:validateRegex
+												pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+
+										</p:inputText>
+										<p:watermark for="email" value="И-мэйл *" />
+										<p:message for="email" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="thumbnail no-border-radius">
+					<h5 class="text-center">
+						<b> 2. Цахилгаан сүлжээнд холбогдох объектын хаяг, байршил </b>
+					</h5>
+					<div class="col-sm-12">
+						<p>
+							<b>2.1 Цахилгаан сүлжээнд холбогдох объектын газрын
+								гэрчилгээн дээрх хаяг: </b>
+						</p>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input16"
+											class="col-sm-2 control-label  padding-top-0">Аймаг /
+											хот</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu value="#{userController.anket2.oaimagid}">
+												<p:ajax event="valueChange" update="@(.daa1)" />
+												<f:selectItems value="#{userController.listAimag}"
+													var="oaimag" itemValue="#{oaimag.aimagID}"
+													itemLabel="#{oaimag.aimagName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input17"
+											class="col-sm-2 control-label  padding-top-0">Сум /
+											дүүрэг:</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu styleClass="daa1"
+												value="#{userController.anket2.osymid}">
+												<p:ajax event="valueChange" update="@(.daa1)" />
+												<f:selectItems value="#{userController.olistSym2}"
+													var="osum" itemValue="#{osum.symID}"
+													itemLabel="#{osum.symName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input18"
+											class="col-sm-2 control-label  padding-top-0">Баг /
+											хороо:</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu styleClass="daa1"
+												value="#{userController.anket2.ohorooid}">
+												<p:ajax event="valueChange" update="@(.daa1)" />
+												<f:selectItems value="#{userController.olistHoroo2}"
+													var="ohoroo" itemValue="#{ohoroo.horooID}"
+													itemLabel="#{ohoroo.horooName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input19"
+											class="col-sm-2 control-label  padding-top-0">Хороолол:</label>
+										<div class="col-sm-10">
+											<p:selectOneMenu styleClass="daa1"
+												value="#{userController.anket2.omiddistid}">
+												<f:selectItems value="#{userController.listMiddistrict2}"
+													var="omid" itemValue="#{omid.middistID}"
+													itemLabel="#{omid.middistName}" />
+											</p:selectOneMenu>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input20"
+											class="col-sm-3 control-label  padding-top-0">Гудамжны
+											нэр № / Байр №:</label>
+										<div class="col-sm-9">
+											<p:inputText required="true" styleClass="form-control"
+												value="#{userController.anket2.ostreetname}" />
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="input21"
+											class="col-sm-2 control-label  padding-top-0">Хаалганы
+											№:</label>
+										<div class="col-sm-10">
+											<p:inputText required="true" styleClass="form-control"
+												value="#{userController.anket2.otoot}" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="thumbnail no-border-radius">
+					<h5 class="text-center">
+						<b> 3. Эрхлэх үйл ажиллагааны чиглэл </b>
+					</h5>
+
+					<div class="col-sm-12">
+						<p>
+							<b>3.1. Эрхлэх үйл ажиллагааны чиглэлээ сонгож доогуур нь
+								зурна уу. </b>
+						</p>
+						<div class="col-sm-12">
+							<label class="checkbox-inline"> <p:selectOneRadio
+									value="#{userController.anket2.cfocusid}" layout="grid"
+									columns="3">
+									<f:selectItem
+										itemValue="1. Халаалтыг дан галладаг зуухаар шийднэ"
+										itemLabel="1. Халаалтыг дан галладаг зуухаар шийднэ" />
+									<f:selectItem itemValue="2. Үйлчилгээ" itemLabel="2. Үйлчилгээ" />
+									<f:selectItem itemValue="3. Орон сууцны барилга"
+										itemLabel="3. Орон сууцны барилга" />
+									<f:selectItem itemValue="4. Үйлчилгээтэй орон сууцны барилга"
+										itemLabel="4. Үйлчилгээтэй орон сууцны барилга" />
+									<f:selectItem itemValue="5. Барилга " itemLabel="5. Барилга " />
+									<f:selectItem itemValue="6. Эмнэлэг " itemLabel="6. Эмнэлэг " />
+									<f:selectItem itemValue="7. Сургууль, цэцэрлэг"
+										itemLabel="7. Сургууль, цэцэрлэг" />
+									<f:selectItem itemValue="8. Хөдөө аж ахуй "
+										itemLabel="8. Хөдөө аж ахуй " />
+									<f:selectItem itemValue="9. Уул уурхай /карьер/"
+										itemLabel="9. Уул уурхай /карьер/" />
+									<f:selectItem itemValue="10.Авто зам" itemLabel="10.Авто зам" />
+									<f:selectItem itemValue="11.Нийтийн эзэмшлийн гэрэлтүүлэг"
+										itemLabel="11.Нийтийн эзэмшлийн гэрэлтүүлэг" />
+									<f:selectItem itemValue="12.Бусад" itemLabel="12.Бусад" />
+								</p:selectOneRadio>
+							</label>
+						</div>
+					</div>
+
+					<div class="col-sm-12" style="margin-top: 20px;">
+						<div class="form-group">
+							<label for="input22" class="col-sm-4 control-label padding-top-0">3.2
+								Эрхлэх үйл ажиллагаагаа тодорхой бичнэ үү. </label>
+							<div class="col-sm-8">
+								<p:inputText required="true" styleClass="form-control"
+									value="#{userController.anket2.cfocusdesc}" />
+							</div>
+						</div>
+					</div>
+
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="thumbnail no-border-radius">
+					<h5 class="text-center">
+						<b> 4. Цахилгаан хэрэглээний дэлгэрэнгүй мэдээлэл</b>
+					</h5>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input22" class="col-sm-5 control-label">4.1
+								Цахилгаан хэрэглээний тооцооны хамгийн их чадал: S </label>
+							<div class="col-sm-6">
+								<p:inputText required="true" styleClass="form-control"
+									value="#{userController.anket2.user_season}" />
+							</div>
+							<div class="col-sm-1">кВА</div>
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-4 control-label">4.2
+								Холбогдохыг хүсч буй хүчдлийн түвшин :</label>
+							<div class="col-sm-8">
+								<p:selectOneMenu value="#{userController.anket2.sum_chadal}">
+									<f:selectItem itemValue="220" itemLabel="220 В" />
+									<f:selectItem itemValue="380" itemLabel="380 В" />
+									<f:selectItem itemValue="6000" itemLabel="6000 - 10000  В" />
+									<f:selectItem itemValue="35000" itemLabel="35000 В" />
+								</p:selectOneMenu>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-3 control-label">4.3
+								Чадлын коэффициент: СОS ϕ </label>
+							<div class="col-sm-9">
+								<p:inputText required="true" styleClass="form-control"
+									value="#{userController.anket2.pcoef}" />
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<p>
+							<b>4.4 Сүлжээнд үе шаттайгаар холбогдох бол: </b>
+						</p>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<p>
+									1. <input type="number" /> оны <input type="number" /> сард
+									авах чадал S <input type="number" /> кВА
+								</p>
+								<p>
+									2. <input type="number" /> оны <input type="number" /> сард
+									авах чадал S <input type="number" /> кВА
+								</p>
+								<p>
+									3. <input type="number" /> оны <input type="number" /> сард
+									авах чадал S <input type="number" /> кВА
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-4 control-label">4.5
+								Тооцооны хамгийн их чадал авах улирлаа сонгож доогуур нь зурна
+								уу. </label>
+							<div class="col-sm-8">
+								<p:selectOneMenu value="#{userController.anket2.user_season}">
+									<f:selectItem itemValue="Хавар" itemLabel="Хавар" />
+									<f:selectItem itemValue="Зун" itemLabel="Зун" />
+									<f:selectItem itemValue="Намар" itemLabel="Намар" />
+									<f:selectItem itemValue="Өвөл" itemLabel="Өвөл" />
+								</p:selectOneMenu>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-4 control-label">4.6
+								Тооцооны хамгийн их чадал авах цагаа сонгож доогуур нь зурна уу.
+							</label>
+							<div class="col-sm-8">
+								<label class="checkbox-inline"> <p:inputText
+										required="true" styleClass="form-control"
+										value="#{userController.anket2.user_ptime}" /> <p:selectOneRadio
+										
+										layout="grid"
+									columns="3"
+										value="#{userController.anket2.user_ptime}">
+										<f:selectItem itemValue="06.00 – 17.00"
+											itemLabel="06.00 – 17.00" />
+										<f:selectItem itemValue="17.00 – 22.00"
+											itemLabel="17.00 – 22.00" />
+										<f:selectItem itemValue="22.00 – 06.00"
+											itemLabel="22.00 – 06.00" />
+									</p:selectOneRadio>
+								</label>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-4 control-label">4.7
+								Хүсч буй хэрэглэгчийн зэрэглэлээ сонгож дугуйлна уу. </label>
+							<div class="col-sm-8">
+								<label class="checkbox-inline"> <p:selectOneRadio layout="grid"
+									columns="3"
+										value="#{userController.anket2.user_zereglel}">
+										<f:selectItem itemValue="I" itemLabel="I зэрэглэл" />
+										<f:selectItem itemValue="II" itemLabel="II зэрэглэл " />
+										<f:selectItem itemValue="III" itemLabel="III зэрэглэл " />
+									</p:selectOneRadio>
+								</label>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-4 control-label">4.8
+								Сүлжээнд холбогдох хугацааны мэдээллээ сонгож доогуур нь зурна
+								уу. </label>
+							<div class="col-sm-8">
+								<label class="checkbox-inline"> <p:selectOneRadio
+										value="#{userController.anket2.user_gorim}">
+										<f:selectItem itemValue="9" itemLabel="Байнга холбогдох" />
+										<f:selectItem itemValue="10" itemLabel="Түр холбогдох" />
+									</p:selectOneRadio>
+								</label>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label for="input23" class="col-sm-4 control-label">4.9
+								Түр холбогдох бол холболтын хугацаагаа сонгож доогуур нь зурна
+								уу. </label>
+							<div class="col-sm-8">
+								<label class="checkbox-inline"> <p:selectOneRadio layout="grid"
+									columns="6"
+										value="#{userController.anket2.user_hugatsaa}">
+										<f:selectItem itemValue="1" itemLabel="1 сар" />
+										<f:selectItem itemValue="2" itemLabel="2 сар" />
+										<f:selectItem itemValue="3" itemLabel="3 сар" />
+										<f:selectItem itemValue="4" itemLabel="4 сар" />
+										<f:selectItem itemValue="5" itemLabel="5 сар" />
+										<f:selectItem itemValue="6" itemLabel="6 сар" />
+										<f:selectItem itemValue="7" itemLabel="7 сар" />
+										<f:selectItem itemValue="8" itemLabel="8 сар" />
+										<f:selectItem itemValue="9" itemLabel="9 сар" />
+										<f:selectItem itemValue="10" itemLabel="10 сар" />
+										<f:selectItem itemValue="11" itemLabel="11 сар" />
+										<f:selectItem itemValue="12" itemLabel="12 сар" />
+									</p:selectOneRadio>
+								</label>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="thumbnail no-border-radius">
+					<h5 class="text-center">
+						<b> 5. Бүрдүүлж хавсаргах материалууд</b>
+					</h5>
+					<div class="col-sm-12">
+						<h5>
+							<b>5.1. Үндсэн материал</b>
+						</h5>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="input24" class="col-sm-6 control-label">-
+									Газрын гэрчилгээ (<span class="select-gg">ашиглах</span>, <span
+									class="select-gg">эзэмших</span>, <span class="select-gg">эзэмших</span>)
+									–ний дугаар:
+								</label>
+								<div class="col-sm-6">
+									<p:inputText required="true" styleClass="form-control"
+										value="#{userController.anket2.user_hugatsaa}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+
+							<div class="form-group">
+								<label for="input25" class="col-sm-5 control-label">-
+									Кадастрын зураг (Газрын албаны баталгаажуулсан) </label>
+								<div class="col-sm-7">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file2}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+
+							<div class="form-group">
+								<label for="input25" class="col-sm-5 control-label">- Үл
+									хөдлөх хөрөнгийн гэрчилгээ дугаар </label>
+								<div class="col-sm-7">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file5}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+
+							<div class="form-group">
+								<label for="input25" class="col-sm-5 control-label">-
+									Иргэний үнэмлэх </label>
+								<div class="col-sm-7">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file3}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+
+							<div class="form-group">
+								<label for="input25" class="col-sm-5 control-label">-
+									Хүсэлтийг судлах төлбөр төлсөн баримт (шинэ холболт хийх
+									хүсэлтэд шаардана) </label>
+								<div class="col-sm-7">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file4}" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<h5>
+							<b>5.2. Барилга, орон сууц барих бол нэмэлтээр:</b>
+						</h5>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="input24" class="col-sm-6 control-label">-
+									Барилгын архитектур төлөвлөлтийн даалгавар </label>
+								<div class="col-sm-6">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file6}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+
+							<div class="form-group">
+								<label for="input25" class="col-sm-5 control-label">-
+									Эскиз зураг <i>(ЕТГ-ын баталсан тамга тэмдэг бүхий нүүр
+										хуудас, барилга байгууламжийн ерөнхий харагдах байдал, ерөнхий
+										төлөвлөгөө)</i>
+								</label>
+								<div class="col-sm-7">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file7}" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-sm-12">
+						<h5>
+							<b>5.3. Орон сууцны байранд үйлчилгээ явуулах бол нэмэлтээр :
+							</b>
+						</h5>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="input24" class="col-sm-6 control-label">-
+									Үйлдвэр үйлчилгээ явуулах зөвшөөрөл </label>
+								<div class="col-sm-6">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file8}" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12">
+
+							<div class="form-group">
+								<label for="input25" class="col-sm-5 control-label">-
+									ОСНААУГ-аас авсан техникийн тодруулга </label>
+								<div class="col-sm-7">
+									<p:fileUpload required="true" mode="simple"
+										styleClass="form-control" value="#{userController.file9}" />
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!--                 <p class="text-center"> -->
+					<!--                     <b><i>Бичиг баримтаа эх хувиар нь авч ирэх ба нэг цэгийн үйлчилгээний ажилтан хувилж авна. -->
+
+					<!--                         </i></b> -->
+					<!--                 </p> -->
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+
+		<p:commandButton value="Илгээх" styleClass="btn btn-primary"
+			actionListener="#{userController.saveAnket2()}" ajax="false" />
+	</ui:define>
+</ui:composition>

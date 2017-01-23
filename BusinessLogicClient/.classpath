@@ -7,7 +7,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Java EE 6"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MedIT_BusinessLogic"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Garden.Entity"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MedIT_BusinessLogic"/>
+	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/poi-2.5.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ENDA.Entity"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

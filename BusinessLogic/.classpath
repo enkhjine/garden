@@ -11,12 +11,8 @@
 			<attribute name="owner.project.facets" value="jst.ejb"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MedIT_BusinessLogic"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MedIT_BusinessLogicClient"/>
-	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/javax.persistence.jar"/>
-	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/report/hibernate-core-3.3.2.GA.jar"/>
-	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/javax.ejb-3.1.2.2.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Garden.BusinessLogicClient"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Garden.Entity"/>
+	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/poi-2.5.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ENDA.BusinessLogicClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ENDA.Entity"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

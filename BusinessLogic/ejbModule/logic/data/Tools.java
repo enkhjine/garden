@@ -149,41 +149,6 @@ public class Tools {
     public static BigDecimal newPkId() {
         return Tools.newPkId(NewPkIdType.longYear);
     }
-    public static BigDecimal newPkId12() {
-        return Tools.newPkId(NewPkIdType.shortYear);
-    }
-    
-    public static BigDecimal newDecimal10() {    	
-    	Date date = new Date();
-
-        BigDecimal nYear = new BigDecimal((new SimpleDateFormat("yyyy")).format(date));
-        BigDecimal nMonth = new BigDecimal((new SimpleDateFormat("MM")).format(date));
-        BigDecimal nDay = new BigDecimal((new SimpleDateFormat("dd")).format(date));
-        BigDecimal nHour = new BigDecimal((new SimpleDateFormat("hh")).format(date));
-        BigDecimal nMinute = new BigDecimal((new SimpleDateFormat("mm")).format(date));
-        BigDecimal nSecond = new BigDecimal((new SimpleDateFormat("ss")).format(date));
-    	
-        BigDecimal year = (new BigDecimal("32140800")).multiply(nYear.subtract(new BigDecimal(2016)));
-        BigDecimal month = (new BigDecimal("2678400")).multiply(nMonth);
-        BigDecimal day = (new BigDecimal("86400")).multiply(nDay);
-    	BigDecimal hour = (new BigDecimal("3600")).multiply(nHour);
-    	BigDecimal minute = (new BigDecimal("60")).multiply(nMinute);
-    	BigDecimal second = nSecond;
-    	
-    	Random randomGenerator = new Random();
-    	int randomInt = randomGenerator.nextInt(10);
-    	
-    	BigDecimal ret = BigDecimal.ZERO;
-    	ret = ret.add(year);
-    	ret = ret.add(month);
-    	ret = ret.add(day);
-    	ret = ret.add(hour);
-    	ret = ret.add(minute);
-    	ret = ret.add(second);
-    	ret = ret.multiply(new BigDecimal(10));
-    	ret = ret.add(new BigDecimal(randomInt));
-    	return ret;
-    }
 
     public static BigDecimal newPkId(NewPkIdType newPkIdType) {
         try {
@@ -194,7 +159,7 @@ public class Tools {
         }
         Date dateNow = new Date();
         SimpleDateFormat dateformatYYYYMMDD = null;
-        dateformatYYYYMMDD = newPkIdType.equals((Object)NewPkIdType.longYear) ? new SimpleDateFormat("yyyyMMddhhmmssSSS") : new SimpleDateFormat("yyMMddhhmmss");
+        dateformatYYYYMMDD = newPkIdType.equals((Object)NewPkIdType.longYear) ? new SimpleDateFormat("yyyyMMddhhmmssSSS") : new SimpleDateFormat("yyMMddhhmmssSSSSS");
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(10);
         StringBuilder nowYYYYMMDD = new StringBuilder(dateformatYYYYMMDD.format(dateNow));

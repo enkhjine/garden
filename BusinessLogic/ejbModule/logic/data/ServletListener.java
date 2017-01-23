@@ -8,7 +8,7 @@ import javax.servlet.ServletContextListener;
 public class ServletListener implements ServletContextListener {
 	
     public void contextInitialized(ServletContextEvent arg0) {
-    	String applicationServerName = Tools.getApplicationServerName();
+        String applicationServerName = Tools.getApplicationServerName();
         ApplicationServerInfo.setApplicationServerName((String)applicationServerName);
         Tools.writeToLog((String)String.format("contextInitialized applicationServerName = %s", applicationServerName));
     }

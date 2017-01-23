@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Garden.Web</name>
+	<name>ENDA.Web</name>
 	<comment></comment>
 	<projects>
-		<project>Garden</project>
-		<project>Garden.BusinessLogic</project>
-		<project>Garden.BusinessLogicClient</project>
-		<project>Garden.Entity</project>
-		<project>RemoteSystemsTempFiles</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
