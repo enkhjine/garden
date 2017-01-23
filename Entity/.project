@@ -3,10 +3,10 @@
 	<name>Garden.Entity</name>
 	<comment></comment>
 	<projects>
-		<project>Hospital</project>
-		<project>Hospital.BusinessLogic</project>
-		<project>Hospital.BusinessLogicClient</project>
-		<project>Hospital.Web</project>
+		<project>Garden</project>
+		<project>Garden.BusinessLogic</project>
+		<project>Garden.BusinessLogicClient</project>
+		<project>Garden.Web</project>
 		<project>RemoteSystemsTempFiles</project>
 	</projects>
 	<buildSpec>
