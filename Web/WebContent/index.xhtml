@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="template/template.xhtml">
+	<ui:define name="content">
+		<div class="form-contaier">
+
+
+			<div class="span12">
+			<img src="#{applicationController.path}assets/images/tno.jpg" style="width: 100%"/>
+                                                <hr/>
+                                        </div>
+
+
+			<div class="col-sm-12">
+				<div class="col-sm-6">
+					<span class="btn btn-info btn-lg lvl1 lvl irgen col-sm-12  no-border-radius "
+						target="irgen" lvl='lvl1' onclick="changeAnketTypeBlank();">Иргэн</span>
+
+
+				</div>
+				<div class="col-sm-6">
+					<span class="btn btn-info btn-lg lvl1 lvl aan col-sm-12  no-border-radius "
+						target="aan" lvl='lvl1' onclick="changeAnketTypeBlank();">ААН</span>
+				</div>
+			</div>
+
+			<div class="col-sm-12 irgen hide lvl1" style="padding-top: 10px;">
+				<hr/>
+				<div class="col-sm-6">
+					<span class="btn btn-info btn-lg lvl2 lvl new col-sm-12  no-border-radius "
+						target="new" lvl='lvl2' onclick="changeAnketTypeBlank();">Шинэ
+						холболт</span>
+				</div>
+				<div class="col-sm-6">
+					<span class="btn btn-info btn-lg lvl2 lvl other col-sm-12  no-border-radius "
+						target="other" lvl='lvl2' onclick="changeAnketTypeBlank();">Бусад</span>
+				</div>
+				<div class="row new hide lvl2">
+					<div class="col-sm-12">
+						<hr />
+						<div class="col-sm-6">
+							<p:commandLink value="Ахуй" action="#{userController.setUrl('anket1')}" styleClass="btn btn-info btn-lg  col-sm-12  no-border-radius form-btn" />
+							
+						</div>
+						<div class="col-sm-6">
+							<p:commandLink value="Үйлдвэрлэл үйлчилгээ" action="#{userController.setUrl('anket2')}" styleClass="btn btn-info btn-lg col-sm-12  no-border-radius form-btn" />
+
+						</div>
+
+					</div>
+				</div>
+				<div class="row other hide lvl2">
+					<div class="col-sm-12">
+						<hr />
+						<div class="col-sm-12">
+							<p:commandLink value="ЦДШ, Дэд станц зөөх" action="#{userController.setUrl('anket4')}" styleClass="btn btn-info btn-lg  col-sm-12  no-border-radius form-btn " />
+							
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-sm-12 aan hide lvl1">
+				<hr />
+				<div class="col-sm-6">
+					<span class="btn btn-info btn-lg  lvl  lvl3 col-sm-12  no-border-radius " target="new"
+						onclick="changeAnketTypeBlank();" lvl='lvl3'>Шинэ холболт</span>
+				</div>
+				<div class="col-sm-6">
+					<span class="btn btn-info btn-lg  lvl lvl3 col-sm-12  no-border-radius  form-btn "
+						onclick="changeAnketTypeBlank();" target="other" lvl='lvl3'>Бусад</span>
+				</div>
+
+				<div class="row new hide lvl3">
+					<div class="col-sm-12">
+						<hr />
+						<div class="col-sm-12">
+							<p:commandLink value="Үйлдвэрлэл үйлчилгээ" action="#{userController.setUrl('anket3')}" styleClass="btn btn-info btn-lg col-sm-12  no-border-radius form-btn " />
+						</div>
+
+					</div>
+				</div>
+				<div class="row other hide lvl3">
+					<div class="col-sm-12">
+						<hr />
+						<div class="col-sm-12">
+							<p:commandLink value="ЦДШ, Дэд станц зөөх" action="#{userController.setUrl('anket5')}" styleClass="btn btn-info btn-lg  col-sm-12  no-border-radius form-btn " />
+							
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+		</div>
+		<p:remoteCommand name="changeAnketType"
+			action="#{tnoController.setChangeanket('containeranket1.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:remoteCommand name="changeAnketType2"
+			action="#{tnoController.setChangeanket('containeranket2.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:remoteCommand name="changeAnketType3"
+			action="#{tnoController.setChangeanket('containeranket3.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:remoteCommand name="changeAnketType4"
+			action="#{tnoController.setChangeanket('containeranket4.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:remoteCommand name="changeAnketType5"
+			action="#{tnoController.setChangeanket('containeranket5.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:remoteCommand name="changeAnketTypeBlank"
+			action="#{tnoController.setChangeanket('blank.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:remoteCommand name="changeAnketTypeEmpty"
+			action="#{tnoController.setChangeanket('empty.xhtml')}"
+			update=":form:changeContainerBlaID" />
+		<p:panel id="changeContainerBlaID" style="border:none !important">
+			<ui:include src="#{tnoController.changeanket}" />
+
+		</p:panel>
+	</ui:define>
+</ui:composition>
