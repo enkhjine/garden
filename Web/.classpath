@@ -14,6 +14,9 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MedIT_Web"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/report"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Garden.BusinessLogic"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Garden.Entity"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Garden.BusinessLogicClient"/>
 	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/faces/common-lang3.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -28,8 +31,5 @@
 	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/javax.ejb-3.1.2.2.jar"/>
 	<classpathentry kind="lib" path="D:/MedIT/BIN/Java/primefaces-4.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/MedIT/BIN/Java/sun.misc.BASE64Decoder.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Garden.BusinessLogic"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Garden.BusinessLogicClient"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Garden.Entity"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
